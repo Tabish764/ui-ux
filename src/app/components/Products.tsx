@@ -59,7 +59,7 @@ const Products = () => {
             <p className="flex justify-between pt-4 text-sm md:text-base font-medium leading-6">
               Nike Air Max Pulse <span>₹ 13,995</span>
             </p>
-            <p className="text-sm text-gray-500">Men's Shoes</p>
+            <p className="text-sm text-gray-500">Men&apos;s Shoes</p>
           </div>
         ))}
       </div>

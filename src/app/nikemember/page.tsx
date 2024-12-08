@@ -34,7 +34,7 @@ const page = () => {
             </div>
             
         </div>
-        <p className='text-center text-[12px] w-[279.31px] pt-[21px] text-[#8D8D8D] font-[400]'>By creating an account, you agree to Nike's <span >Privacy Policy</span> and <span className='underline'>Terms of Use.</span></p>
+        <p className='text-center text-[12px] w-[279.31px] pt-[21px] text-[#8D8D8D] font-[400]'>By creating an account, you agree to Nike&apos;s <span >Privacy Policy</span> and <span className='underline'>Terms of Use.</span></p>
         <button className='bg-black text-white  text-[15px] w-[324px] h-[40px] rounded-[3px] mt-[30px]'>JOIN US</button>
         <p className='mt-[20px] pb-[33px] text-[#8D8D8D]'>Already a Member? <span className='text-black underline '>Sign In</span></p>
         </div>

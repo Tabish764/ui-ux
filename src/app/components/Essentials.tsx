@@ -27,8 +27,7 @@ const Essentials = () => {
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Huarache</p>
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Air Max 90</p>
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Air Max 95</p>
-  </div>
-  <div>
+  </div>&apos;  <div>
     <p className="font-medium text-[15px] leading-6 pb-6">Shoes</p>
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">All Shoes</p>
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Custom Shoes</p>
@@ -45,9 +44,9 @@ const Essentials = () => {
   <div>
     <p className="font-medium text-[15px] leading-6 pb-6">Kids</p>
     <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Infant & Toddler Shoes</p>
-    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids' Shoes</p>
-    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids' Jordan Shoes</p>
-    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids' Basketball Shoes</p>
+    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids&apos; Shoes</p>
+    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids&apos; Jordan Shoes</p>
+    <p className="pb-4 text-[15px] leading-6 font-medium text-[#757575]">Kids&apos; Basketball Shoes</p>
   </div>
 </div>
 

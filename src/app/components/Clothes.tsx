@@ -22,7 +22,7 @@ const Clothes = () => {
         <div className='pt-[25px]   '>
             <div className='lg:pl-[407px] justify-center flex  items-center gap-[13px]'>
 
-            <p className='font-medium text-[15px] leading-6'>Shop Men's</p>
+            <p className='font-medium text-[15px] leading-6'>Shop Men&apos;s</p>
             <div className='flex gap-[12px]'>
 
             <Image src={arrow1} alt=''></Image>
@@ -35,7 +35,7 @@ const Clothes = () => {
             <div className='pt-[21px] '>
 
             <p className='font-medium lg:text-[15px] text-[10px] leading-6 flex justify-between pr-4'>Nike Dri-FIT ADV TechKnit Ultra <span>₹ 3 895</span></p>
-            <p  className='text-[#757575]'>Men's Short-Sleeve </p>
+            <p  className='text-[#757575]'>Men&apos;s Short-Sleeve </p>
             <p  className='text-[#757575]'>Running Top</p>
             </div>
             </div>
@@ -44,7 +44,7 @@ const Clothes = () => {
             <div className='pt-[21px]  '>
 
             <p className='font-medium lg:text-[15px] text-[10px] leading-6 flex justify-between pr-4'>Nike Dri-FIT Challenger <span>₹ 2 495</span></p>
-            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men's 18cm (approx.) 2- </p>
+            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men&apos;s 18cm (approx.) 2- </p>
             <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>in-1 Versatile Shorts</p>
             </div>
             </div>
@@ -55,7 +55,7 @@ const Clothes = () => {
         <div className='pt-[25px]   max-w-[666px]'>
             <div className='lg:pl-[407px] justify-center flex  items-center gap-[13px]'>
 
-            <p className='font-medium text-[15px] leading-6'>Shop Men's</p>
+            <p className='font-medium text-[15px] leading-6'>Shop Men&apos;s</p>
             <div className='flex gap-[12px]'>
 
             <Image src={arrow1} alt=''></Image>
@@ -68,7 +68,7 @@ const Clothes = () => {
             <div className='pt-[21px] '>
 
             <p className='font-medium lg:text-[15px] text-[10px] leading-6 flex justify-between pr-4'>Nike Dri-FIT ADV TechKnit Ultra <span>₹ 3 895</span></p>
-            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men's Short-Sleeve </p>
+            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men&apos;s Short-Sleeve </p>
             <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Running Top</p>
             </div>
             </div>  
@@ -77,7 +77,7 @@ const Clothes = () => {
             <div className='pt-[21px]  '>
 
             <p className='font-medium lg:text-[15px] text-[10px] leading-6 flex justify-between pr-4'>Nike Dri-FIT Challenger <span>₹ 2 495</span></p>
-            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men's 18cm (approx.) 2- </p>
+            <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>Men&apos;s 18cm (approx.) 2- </p>
             <p  className='text-[#757575] sm:text-[10px] lg:text-[14px]'>in-1 Versatile Shorts</p>
             </div>
             </div>
