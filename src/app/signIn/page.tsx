@@ -25,7 +25,7 @@ const page = () => {
                 <p className='text-[12px] font-[400] text-[#BCBCBC]'>Forgotten your password?</p>
             </div>
         </div>
-        <p className='text-center text-[12px] w-[279.31px] pt-[25px] text-[#8D8D8D] font-[400]'>By logging in, you agree to Nike's <span >Privacy Policy</span> and <span className='underline'>Terms of Use.</span></p>
+        <p className='text-center text-[12px] w-[279.31px] pt-[25px] text-[#8D8D8D] font-[400]'>By logging in, you agree to Nike&apos;s <span >Privacy Policy</span> and <span className='underline'>Terms of Use.</span></p>
         <button className='bg-black text-white text-[11px] w-[324px] h-[40px] rounded-[3px] mt-[30px]'>SIGN IN</button>
         <p className='mt-[20px] pb-[83px] text-[#8D8D8D]'>Not a Member? <span className='text-black underline '>Join us</span></p>
         </div>

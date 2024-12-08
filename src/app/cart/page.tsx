@@ -31,7 +31,7 @@ const page = () => {
             {/* Details Section */}
             <div className="flex-1">
               <h1 className="font-medium text-[15px]">Nike Dri-FIT ADV TechKnit Ultra</h1>
-              <p className="text-[#757575] text-[15px]">Men's Short-Sleeve Running Top</p>
+              <p className="text-[#757575] text-[15px]">Men&apos;s Short-Sleeve Running Top</p>
               <p className="text-[15px] font-light text-[#757575]">Ashen Slate/Cobalt Bliss</p>
 
               <div className="flex text-[#757575] mt-3 space-x-6">
@@ -67,7 +67,7 @@ const page = () => {
             {/* Details Section */}
             <div className="flex-1">
               <h1 className="font-medium text-[15px]">Nike Air Max 97 SE</h1>
-              <p className="text-[#757575] text-[15px]">Men's Shoes</p>
+              <p className="text-[#757575] text-[15px]">Men&apos;s Shoes</p>
               <p className="text-[15px] font-light text-[#757575]">
                 Flat Pewter/Light Bone/Black/White
               </p>
