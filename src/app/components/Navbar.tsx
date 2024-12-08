@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Search from '../../../public/Auto Layout Horizontal.png'
 import Heart from '../../../public/heart.png'
 import Cart from '../../../public/cart.png'
+import { FaBars } from 'react-icons/fa'; 
 const Navbar = () => {
 
     type NavLink = {
@@ -49,11 +50,12 @@ const Navbar = () => {
         <Image src={Search} alt='Search Icon'  />
       </div>
         </div>
-        <div className='flex gap-3 pl-[12px]'>
+        <div className='flex items-center gap-3 pl-[12px]'>
             <Image src={Heart} alt=''></Image>
             <Link href={'/cart'}>
             <Image src={Cart} alt=''></Image>
             </Link>
+        <FaBars className='block md:hidden' size={25} />
         </div>
     </div>
         </div>
