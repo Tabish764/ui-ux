@@ -16,11 +16,11 @@ const Topbar = () => {
             <p className='text-[13px] px-[10px] flex items-center font-medium text-[#111111] leading-[26px]'>Skip to main content</p>
         </div>
         <div className='flex gap-[10.26px] text-[11px] font-medium  items-center'>
-            <Link href="/nikestore" className='flex font-medium  gap-[10.26px]'>Find a Store </Link>
+            <Link href={"/nikestore"} className='flex font-medium  gap-[10.26px]'>Find a Store </Link>
             <span className='text-[12px]'>|</span>
-            <p className='flex font-medium  gap-[10.26px]'>Help <span  className='text-[12px]'>|</span></p>
-            <p className='flex font-medium  gap-[10.26px]'>Join Us<span  className='text-[12px]'>|</span></p>
-            <p>Sign In </p>
+            <Link href={"/help"} className='flex font-medium  gap-[10.26px]'>Help <span  className='text-[12px]'>|</span></Link>
+            <Link href={'nikemember'} className='flex font-medium  gap-[10.26px]'>Join Us<span  className='text-[12px]'>|</span></Link>
+            <Link href={'signIn'}>Sign In </Link>
         </div>
     </div>
 

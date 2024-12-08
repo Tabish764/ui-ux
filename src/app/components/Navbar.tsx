@@ -22,7 +22,10 @@ const Navbar = () => {
       
   return (
     <div className='mx-auto max-w-[1440px] w-full  flex justify-between  items-center'>
+      <Link href={'/'}>
+      
         <Image width={58.85} height={20.54} className=' ' src={Logo} alt="Nike's Logo"></Image>
+      </Link>
        <span></span>
         <div className='md:flex   hidden gap-[15px]'>
             {

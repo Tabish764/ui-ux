@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className=' flex flex-col justify-center  items-center w-full'>
 
-        <div className='w-full pt-[10px] pb-1 bg-[#F5F5F5] flex flex-col items-center justify-center'>
+        <div className='w-full pt-[10px] pb-1 bg-[#F5F5F5] flex flex-col items-center justify-center'>  
         <h1 className='text-[15px] font-medium text-center'>Hello Nike App</h1>
 
         <p className='text-[11px] leading-6 top-[19px] text-center'>Download the app to access everything Nike. <span className='underline font-medium'>Get Your Great</span></p>

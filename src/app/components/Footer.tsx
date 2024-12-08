@@ -5,6 +5,7 @@ import insta from '../../../public/insta.png'
 import youtube from '../../../public/youtube.png'
 import Image from 'next/image'
 import location from '../../../public/location.png'
+import Link from 'next/link'
 const Footer = () => {
   return (
     <div className='bg-black pt-[40px] flex  flex-col px-[42px] justify-between  text-white w-full '>
@@ -13,10 +14,10 @@ const Footer = () => {
      
             <div className='flex lg:flex-nowrap flex-wrap flex-col lg:flex-row lg:text-start  mx-auto lg:mx-0 text-center '>
 
-            <div className=' lg:mr-[159px]'>
-            <p className='text-[10px] leading-[32.63px] '>FIND A STORE</p>
-            <p className='text-[10px] leading-[32.63px] '>BECOME A MEMEBER</p>
-            <p className='text-[10px] leading-[32.63px] '>SIGN UP FOR EMAIL</p>
+            <div className=' flex flex-col lg:mr-[159px]'>
+            <Link href={''} className='text-[10px] leading-[32.63px] '>FIND A STORE</Link>
+            <Link href={'/nikemember'} className='text-[10px] leading-[32.63px] '>BECOME A MEMEBER</Link>
+            <Link href={'/signIn'} className='text-[10px] leading-[32.63px] '>SIGN UP FOR EMAIL</Link>
             <p className='text-[10px] lg:w-[93.45px] leading-[24px] lg:text-center'>Send Us Feedback</p>
             <p className='text-[10px] leading-[32.63px] '>STUDENT DISCOUNTS</p>
         

@@ -43,7 +43,7 @@ const Products = () => {
       {/* Products Section */}
       <div
         ref={scrollContainer}
-        className="flex gap-4 px-6 lg:px-12 pt-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        className="flex gap-4 px-6 lg:px-12 pt-6 overflow-x-hidden snap-x snap-mandatory scrollbar-hide"
       >
         {/* Product Item */}
         {[Nike, Nike, Nike2, Nike2].map((imageSrc, index) => (
