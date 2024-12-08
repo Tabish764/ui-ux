@@ -31,7 +31,7 @@ const Navbar = () => {
             {
                 navLinks.map((item,index)=>(
                     <p className='text-[15px] font-medium' key={index}>
-                        <Link href={item.url}  >{item.name}</Link>
+                        <Link href={''}  >{item.name}</Link>
                     </p>
                 ))
             }
@@ -51,7 +51,9 @@ const Navbar = () => {
         </div>
         <div className='flex gap-3 pl-[12px]'>
             <Image src={Heart} alt=''></Image>
+            <Link href={'/cart'}>
             <Image src={Cart} alt=''></Image>
+            </Link>
         </div>
     </div>
         </div>
