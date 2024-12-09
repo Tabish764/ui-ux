@@ -7,11 +7,10 @@ import shoe from "../../../public/s.png";
 const page = () => {
   return (
     <div className="mx-auto max-w-[1440px] w-full pt-[76px]">
-      <div className="flex  lg:flex-row items-center lg:items-start flex-col justify-between">
-        <div>
-          <div className="flex   items-center">
-            <h1 className="font-medium   text-[24px]">New (500)</h1>
-            <div className="flex justify-between  items-center gap-[25px]">
+      <div className="pb-[30px] flex justify-between">
+
+      <h1 className="font-medium   text-[24px]">New (500)</h1>
+      <div className="flex justify-between  items-center gap-[25px]">
               <p className="text-[16px] text-center flex gap-2 items-center ">
                 Hide Filters{" "}
                 <span>
@@ -20,9 +19,12 @@ const page = () => {
               </p>
               <p className="text-[16px] text-center">Sort By</p>
             </div>
-          </div>
+      </div>
+      <div className="flex  lg:flex-row items-center lg:items-start flex-col justify-between">
+        <div className="w-[260px]">
+          
 
-          <div className=" justify-between">
+          <div className=" justify-between  ">
             <div className="max-w-[260px] flex justify-between ">
               <div className="text-[15px] w-full font-medium ">
                 <p className="mb-[14.59px]">Shoes</p>
