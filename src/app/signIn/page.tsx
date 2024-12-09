@@ -30,6 +30,7 @@ const page = () => {
         <p className='mt-[20px] pb-[83px] text-[#8D8D8D]'>Not a Member? <span className='text-black underline '>Join us</span></p>
         </div>
     </div>
+    
   )
 }
 
