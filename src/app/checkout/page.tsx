@@ -38,7 +38,7 @@ const page = () => {
         <div className='pt-[90px] flex-wrap justify-center   flex md:justify-between mx-auto max-w-[880px]'>
             <div className='md:max-w-[440px] max-w-[300px]'>
             <h1 className='text-[21px] font-medium'>How would you like to get your order?</h1>
-            <p className='text-[15px] pb-[24px] text-[#757575]  pt-[11px]'>Customs regulation for India require a copy of the recipient's KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information. <span className='underline'>Learn More</span></p>
+            <p className='text-[15px] pb-[24px] text-[#757575]  pt-[11px]'>Customs regulation for India require a copy of the recipient&apos;s KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information. <span className='underline'>Learn More</span></p>
             <div className='text-center border-black rounded-[12px] border-2 relative'>
   <div className='absolute left-5 top-1/2 transform  -translate-y-1/2'>
     <Image src={box} alt='' />
@@ -156,12 +156,12 @@ const page = () => {
 
                     <div className='mt-[8px] gap-[12px] flex'>
                     <Image src={man1} className='w-[208px]' alt=''></Image>
-                    <p>Nike Dri-FIT ADV TechKnit Ultra Men's Short-Sleeve Running Top <br /><span className='text-[#8D8D8D]'>Qty1</span><br /><span className='text-[#8D8D8D]'>Size L</span><br /><span className='text-[#8D8D8D]'>₹ 3 895.00</span></p>
+                    <p>Nike Dri-FIT ADV TechKnit Ultra Men&apos;s Short-Sleeve Running Top <br /><span className='text-[#8D8D8D]'>Qty1</span><br /><span className='text-[#8D8D8D]'>Size L</span><br /><span className='text-[#8D8D8D]'>₹ 3 895.00</span></p>
                    
                     </div>
                     <div className='mt-[8px] gap-[12px] flex'>
                     <Image src={shoe1} className='w-[208px]' alt=''></Image>
-                    <p>Nike Air Max 97 SE Men's Shoes <br /><span className='text-[#8D8D8D]'>Qty1</span><br /><span className='text-[#8D8D8D]'>Size UK 8</span><br /><span className='text-[#8D8D8D]'>₹ 16 995.00</span></p>
+                    <p>Nike Air Max 97 SE Men&apos;s Shoes <br /><span className='text-[#8D8D8D]'>Qty1</span><br /><span className='text-[#8D8D8D]'>Size UK 8</span><br /><span className='text-[#8D8D8D]'>₹ 16 995.00</span></p>
                    
                     </div>
                 </div>
