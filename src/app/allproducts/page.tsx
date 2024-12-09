@@ -90,7 +90,7 @@ const page = () => {
 
         <div className=" flex flex-col flex-wrap pb-[142px] justify-center i gap-[12px] w-[75%]">
           <div className="flex flex-wrap justify-center gap-[12px]">
-            <div className="">
+            <div  className='pb-[40px]'>
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -98,7 +98,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -107,7 +107,7 @@ const page = () => {
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
 
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -115,7 +115,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -123,7 +123,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -131,7 +131,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -139,7 +139,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -147,7 +147,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -155,7 +155,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -163,7 +163,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -171,7 +171,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -179,7 +179,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -187,7 +187,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -195,7 +195,7 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
@@ -203,7 +203,127 @@ const page = () => {
               <p className="text-[#757575] font-medium">1 Colour</p>
               <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
             </div>
-            <div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='pb-[40px]' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='' >
+              <Image src={shoe} alt=""></Image>
+              <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
+              <p>Nike Air Force 1 Mid 07</p>
+              <p className="text-[15px] text-[#757575]">Mens Shoes</p>
+              <p className="text-[#757575] font-medium">1 Colour</p>
+              <p className="pt-[19px] font-medium">MRP : ₹ 10 795.00</p>
+            </div>
+            <div className='' >
               <Image src={shoe} alt=""></Image>
               <p className="text-[15px] font-medium text-[#9E3500]">Just In</p>
               <p>Nike Air Force 1 Mid 07</p>
