@@ -6,10 +6,10 @@ import heart from '../../../public/heart.png';
 
 const page = () => {
   return (
-    <div className="w-full max-w-[1240px] mx-auto mt-10 px-4 flex flex-wrap gap-8">
+    <div className="w-full pb-[100px] lg:pb-[0px] max-w-[1240px] mx-auto mt-10 px-4 flex flex-wrap gap-8">
       
       {/* Left Section */}
-      <div className="flex-1">
+      <div className="lg:flex-1 flex flex-col mx-auto ">
         {/* Free Delivery Section */}
         <div className="bg-[#F7F7F7] p-4">
           <h1 className="font-medium text-[13px]">Free Delivery</h1>
@@ -20,8 +20,9 @@ const page = () => {
         </div>
 
         {/* Bag Items */}
-        <div className="mt-6 space-y-6">
+        <div className="mt-6 space-y-6  mb-[85px]">
           {/* First Item */}
+            <h1 className='text-[22px] font-medium '>Bag</h1>
           <div className="flex flex-wrap items-start gap-4 border-b pb-4">
             {/* Image Section */}
             <div className="w-[150px]">
@@ -98,7 +99,7 @@ const page = () => {
       </div>
 
       {/* Summary Section */}
-      <div className="w-full max-w-[350px] bg-white p-6 rounded-lg shadow-md">
+      <div className="w-full max-w-[350px] mx-auto lg:mx-0 bg-white rounded-lg">
         <h1 className="text-[21px] font-medium mb-4">Summary</h1>
         <div className="flex justify-between text-sm mb-2">
           <p>Subtotal</p>
@@ -108,10 +109,12 @@ const page = () => {
           <p>Estimated Delivery & Handling</p>
           <p>Free</p>
         </div>
-        <div className="flex justify-between t font-medium text-sm mt-[37px]">
+        <hr className='mt-[20px]' />
+        <div className="flex justify-between t font-medium text-sm mt-[17px]">
           <p>Total</p>
           <p>₹ 20 890.00</p>
         </div>
+        <hr className='mt-[20px]' />
         <button className="w-full bg-black text-white py-[18px] rounded-[30px] mt-[49px]">
           Member Checkout
         </button>

@@ -4,19 +4,19 @@ import Logo from '../../../public/Frame1.png'
 const page = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
-        <div className='flex items-center justify-centers'>
-            <Image src={Logo} alt='logo'></Image>
+        <div className='flex  items-center justify-centers'>
+            <Image className='' src={Logo} alt='logo'></Image>
         </div>
         <div className='flex'>
 
         <h1 className='font-bold text-[18px] text-center w-[156px]'>YOUR ACCOUNT FOR EVERYTHING NIKE</h1>
         </div>
-        <div className='flex justify-center items-center flex-col'>
+        <div className='flex justify-center mt-[25px] items-center flex-col'>
 
-        <input placeholder='Email address' className="text w-[324px] border placeholder:px-[17px] py-3 border-[#E5E5E5]" />
-        <input placeholder='Email address' className="text mt-[13px] w-[324px] border placeholder:px-[17px] py-3 border-[#E5E5E5]" />
-        <div className='flex items-center justify-between gap-[14px] text-[#8D8D8D] pt-[23px]'>
-            <div className='flex items-center gap-[14px]'>
+        <input placeholder='Email address' className="text w-[324px] rounded-[4px] border placeholder:px-[17px] py-3 border-[#E5E5E5]" />
+        <input placeholder='Password' className="text mt-[13px] w-[324px] rounded-[4px] border placeholder:px-[17px] py-3 border-[#E5E5E5]" />
+        <div className='flex items-center justify-between  w-full gap-[14px] text-[#8D8D8D] pt-[23px]'>
+            <div className='flex justify-between items-center gap-[14px]'>
 
             <input type="checkbox" className='w-[20px] h-[20px] border-[#E5E5E5]' />
             <p className='text-[12px]  font-[400]'>Keep me signed in</p>
