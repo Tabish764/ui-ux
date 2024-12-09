@@ -26,7 +26,7 @@ const Essentials = () => {
          <div className="">
   
     <p className="font-medium text-[15px] leading-6 pb-6">Icons</p>
-    <p className="pb-4 text-[15px] border   leading-6 font-medium text-[#757575]">Air Force 1</p>
+    <p className="pb-4 text-[15px]    leading-6 font-medium text-[#757575]">Air Force 1</p>
     <p className="pb-4 text-[15px] leading-6  font-medium text-[#757575]">Huarache</p>
     <p className="pb-4 text-[15px] leading-6  font-medium text-[#757575]">Air Max 90</p>
     <p className="pb-4 text-[15px] leading-6  font-medium text-[#757575]">Air Max 95</p>

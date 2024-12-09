@@ -8,6 +8,7 @@ import shoe1 from '../../../public/shoe1.png'
 import Link from 'next/link'
 import location from '../../../public/location.png'
 import card from '../../../public/payments.png'
+import box from '../../../public/box.png'
 const page = () => {
   return (
     //NAVBAR
@@ -19,7 +20,9 @@ const page = () => {
 
 
         <div className='flex justify-between'>
+            <Link href={'/'}>
             <Image src={logo} alt='logo'></Image>
+            </Link>
             <div className='flex items-center'>
                 <p className='pr-[46px] '>000 800 100 9538</p>
                 <div className='pr-[40px] flex items-center'>
@@ -36,10 +39,16 @@ const page = () => {
             <div className='md:max-w-[440px] max-w-[300px]'>
             <h1 className='text-[21px] font-medium'>How would you like to get your order?</h1>
             <p className='text-[15px] pb-[24px] text-[#757575]  pt-[11px]'>Customs regulation for India require a copy of the recipient's KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information. <span className='underline'>Learn More</span></p>
-            <div className='text-center'>
+            <div className='text-center border-black rounded-[12px] border-2 relative'>
+  <div className='absolute left-5 top-1/2 transform  -translate-y-1/2'>
+    <Image src={box} alt='' />
+  </div>
+  <button className='md:py-[29px] text-[15px] md:pr-[307px] pl-[21px] py-4 px-5 rounded-[12px]'>
+    Deliver
+  </button>
+</div>
 
-            <button className='md:py-[29px] text-[15px] md:pr-[307px] pl-[21px] py-4 px-5  rounded-[12px] border-black border-2'>Deliver</button>
-            </div>
+            
             <h1 className='text-[21px] font-medium pt-[44px]'>Enter your name and address:</h1>
             <div className='pt-[28px]'>
 
