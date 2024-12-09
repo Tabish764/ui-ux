@@ -1,1 +1,3 @@
 My UI/UX hackathon project includes the following responsive pages: /cart, /help, /signIn, /productdetail, /nikemember, /checkout, and /allproducts. You can access these pages directly by navigating to their respective routes.
+
+My approach to turning Figma designs into pixel-perfect code involves paying close attention to every detail. I make sure the design elements, like spacing, fonts, and colors, match perfectly. I spend a lot of time and effort to get everything just right, sometimes using AI tools to speed up the process. Even though I use automation, I still focus on manually fine-tuning everything to make sure it looks great. I work hard and, at times, stay up late to make sure the final result is top quality.
