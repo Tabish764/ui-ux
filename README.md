@@ -1,1 +1,1 @@
-My UI/UX hackathon project consists : "/cart", "/help", "signIn", "/productdetail", "/nikemember", "/checkout","allproducts","nikestore" all of which are responsive. 
+My UI/UX hackathon project includes the following responsive pages: /cart, /help, /signIn, /productdetail, /nikemember, /checkout, and /allproducts. You can access these pages directly by navigating to their respective routes.
