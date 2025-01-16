@@ -1,0 +1,54 @@
+// Product Schema
+export default {
+  name: 'product',
+  type: 'document',
+  fields: [
+    { name: 'name', type: 'string', title: 'Product Name' },
+    { name: 'price', type: 'number', title: 'Price' },
+    { name: 'stock', type: 'number', title: 'Stock Level' },
+    { name: 'category', type: 'string', title: 'Category' },
+    { name: 'description', type: 'text', title: 'Description' }
+  ]
+}
+
+export default {
+  name: 'order',
+  type: 'document',
+  fields: [
+    { name: 'orderID', type: 'string', title: 'Order ID' },
+    { name: 'productID', type: 'reference', to: [{type: 'product'}], title: 'Product ID' },
+    { name: 'quantity', type: 'number', title: 'Quantity' }
+  ]
+}
+
+export default {
+  name: 'customer',
+  type: 'document',
+  fields: [
+    { name: 'customerID', type: 'string', title: 'Customer ID' },
+    { name: 'name', type: 'string', title: 'Name' },
+    { name: 'contactInfo', type: 'string', title: 'Contact Info' },
+    { name: 'address', type: 'string', title: 'Address' }
+  ]
+}
+
+export default {
+  name: 'shipment',
+  type: 'document',
+  fields: [
+    { name: 'shipmentID', type: 'string', title: 'Shipment ID' },
+    { name: 'orderID', type: 'reference', to: [{type: 'order'}], title: 'Order ID' },
+    { name: 'status', type: 'string', title: 'Status' },
+    { name: 'deliveryDate', type: 'datetime', title: 'Delivery Date' }
+  ]
+}
+
+export default {
+  name: 'deliveryZone',
+  type: 'document',
+  fields: [
+    { name: 'zoneName', type: 'string', title: 'Zone Name' },
+    { name: 'coverageArea', type: 'string', title: 'Coverage Area' },
+    { name: 'assignedDrivers', type: 'array', of: [{ type: 'string' }], title: 'Assigned Drivers' }
+  ]
+}
