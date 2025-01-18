@@ -4,7 +4,7 @@ import filter from "../../../public/setting.png";
 import silde from "../../../public/Frame (2).png";
 import up from "../../../public/up.png";
 import Image from "next/image";
-import shoe from "../../../public/s.png";
+
 const page = () => {
 
   const [products, setProducts] = useState([]);
@@ -32,6 +32,8 @@ const page = () => {
   }, []);
   return (
     <div className="mx-auto max-w-[1440px] w-full pt-[76px]">
+      {loading && <p>loading...</p>}
+      {error && <p>{error}</p>}
       <div className="pb-[30px] flex justify-between">
         <h1 className="font-medium   text-[24px]">New (500)</h1>
         <div className="flex justify-between  items-center gap-[25px]">

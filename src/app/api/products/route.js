@@ -5,6 +5,7 @@ import {client} from '../../../sanity/lib/client';
 export async function GET() {
     try {
         const query = `*[_type == "product"]{
+             id,
             productName,
             category,
             price,
