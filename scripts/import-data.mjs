@@ -36,46 +36,47 @@ async function uploadImageToSanity(imageUrl) {
 }
 
 async function importData() {
-  try {
-    console.log('migrating data please wait...');
-
-    // API endpoint containing car data
-    const response = await axios.get('https://template-03-api.vercel.app/api/products');
-    const products = response.data.data;
-    console.log("products ==>> ", products);
-
-
-    for (const product of products) {
-      let imageRef = null;
-      if (product.image) {
-        imageRef = await uploadImageToSanity(product.image);
+    try {
+      console.log('migrating data please wait...');
+  
+      // Get the products from the API (adjust for correct data structure)
+      const response = await axios.get('http://localhost:3000/api/data');
+      const products = response.data; // Assuming data is inside a "data" property
+      console.log("products ==>> ", products);
+  
+      for (const product of products) {
+        let imageRef = null;
+        if (product.image) {
+          imageRef = await uploadImageToSanity(product.image);
+        }
+  
+        const sanityProduct = {
+          _type: 'product',
+          id: product.id,
+          productName: product.productName,
+          category: product.category,
+          price: product.price,
+          inventory: product.inventory,
+          colors: product.colors || [], // Optional, as per your schema
+          status: product.status,
+          description: product.description,
+          image: imageRef ? {
+            _type: 'image',
+            asset: {
+              _type: 'reference',
+              _ref: imageRef,
+            },
+          } : undefined,
+        };
+  
+        await client.create(sanityProduct);
       }
-
-      const sanityProduct = {
-        _type: 'product',
-        productName: product.productName,
-        category: product.category,
-        price: product.price,
-        inventory: product.inventory,
-        colors: product.colors || [], // Optional, as per your schema
-        status: product.status,
-        description: product.description,
-        image: imageRef ? {
-          _type: 'image',
-          asset: {
-            _type: 'reference',
-            _ref: imageRef,
-          },
-        } : undefined,
-      };
-
-      await client.create(sanityProduct);
+  
+      console.log('Data migrated successfully!');
+    } catch (error) {
+      console.error('Error in migrating data ==>> ', error);
     }
-
-    console.log('Data migrated successfully!');
-  } catch (error) {
-    console.error('Error in migrating data ==>> ', error);
   }
-}
+  
 
 importData();

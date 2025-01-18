@@ -3,6 +3,11 @@ export const productSchema = {
     title: 'Product',
     type: 'document',
     fields: [
+        {
+            name:'id',
+            title:'Product Id',
+            type:'number'
+        },
       {
         name: 'productName',
         title: 'Product Name',
