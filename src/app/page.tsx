@@ -7,23 +7,19 @@ import Hero from "./components/Hero";
 
 import Products from "./components/Products";
 
-
-
-import React from 'react'
+import React from "react";
 
 const page = () => {
   return (
     <>
-   
-    <Hero/>
-    <Products/>
-    <Featured/>
-    <Clothes/>
-    <Flight/>
-    <Essentials/>
-   
+      <Hero />
+      <Products />
+      <Featured />
+      <Clothes />
+      <Flight />
+      <Essentials />
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
