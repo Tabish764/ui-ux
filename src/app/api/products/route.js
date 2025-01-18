@@ -1,10 +1,10 @@
-
-import { NextResponse } from 'next/server';
-import {client} from '../../../sanity/lib/client';
+import { NextResponse } from "next/server";
+import { client } from "../../../sanity/lib/client";
 
 export async function GET() {
-    try {
-        const query = `*[_type == "product"]{
+  try {
+    const query = `*[_type == "product"]{
+            id,
             productName,
             category,
             price,
@@ -14,11 +14,14 @@ export async function GET() {
             "imageUrl": image.asset->url,
             description
         }`;
-        const products = await client.fetch(query);
+    const products = await client.fetch(query);
 
-        return NextResponse.json(products, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        return NextResponse.json({ message: 'Failed to fetch products' }, { status: 500 });
-    }
+    return NextResponse.json(products, { status: 200 });
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return NextResponse.json(
+      { message: "Failed to fetch products" },
+      { status: 500 }
+    );
+  }
 }
