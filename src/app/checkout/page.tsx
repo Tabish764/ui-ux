@@ -1,7 +1,8 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../public/logo1.png";
-import cart from "../../../public/cart1.png";
+import cart1 from "../../../public/cart1.png";
 import msg from "../../../public/msg1.png";
 import man1 from "../../../public/man 1.png";
 import shoe1 from "../../../public/shoe1.png";
@@ -9,7 +10,18 @@ import Link from "next/link";
 import location from "../../../public/location.png";
 import card from "../../../public/payments.png";
 import box from "../../../public/box.png";
-const page = () => {
+import { useCart } from "../context/CartContext";
+
+const Page = () => {
+   const { cart, removeFromCart, updateQuantity } = useCart();
+  
+  const [checkbox2, setCheckbox2] = useState(false);
+
+  
+  const isButtonDisabled = !(checkbox2);
+   const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+   const shippingFee = 0; 
+   const total = subtotal + shippingFee;
   return (
     //NAVBAR
     <>
@@ -23,8 +35,10 @@ const page = () => {
             <div className="pr-[40px] flex items-center">
               <Image src={msg} alt="logo"></Image>
             </div>
-
-            <Image src={cart} alt="logo"></Image>
+            <Link href='/cart'>
+            
+            <Image src={cart1} alt="logo"></Image>
+            </Link>
           </div>
         </div>
 
@@ -58,19 +72,19 @@ const page = () => {
             <div className="pt-[28px]">
               <input
                 type="text"
-                className=" w-full mb-[32px] rounded-[4px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                placeholder="First Name"
+                className=" w-full mb-[32px] rounded-[4px] pl-[16px]  placeholder:text-black py-[16px] border"
+                 placeholder="First Name"
               />
               <input
                 type="text"
-                className=" w-full rounded-[4px] mb-[32px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                placeholder="First Name"
+                className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
+                 placeholder="First Name"
               />
               <div className="mb-[32px] rounded-[4px]">
                 <input
                   type="text"
-                  className=" w-full rounded-[4px]  placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="Address Line 1"
+                  className=" w-full rounded-[4px]  pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="Address Line 1"
                 />
                 <p className="text-[11px] text-[#757575]">
                   We do not ship to P.O. boxes
@@ -79,48 +93,48 @@ const page = () => {
 
               <input
                 type="text"
-                className=" w-full rounded-[4px] mb-[32px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                placeholder="Address Line 2"
+                className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
+                 placeholder="Address Line 2"
               />
               <input
                 type="text"
-                className=" w-full rounded-[4px] mb-[32px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                placeholder="Address Line 3"
+                className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
+                 placeholder="Address Line 3"
               />
               <div className="flex gap-[17px]  justify-between">
                 <input
                   type="text"
-                  className=" w-1/2 rounded-[4px] mb-[32px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="Postal Code"
+                  className=" w-1/2 rounded-[4px] mb-[32px]  placeholder:pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="Postal Code"
                 />
                 <input
                   type="text"
-                  className=" w-1/2 rounded-[4px] mb-[32px] placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="Locality"
+                  className=" w-1/2 rounded-[4px] mb-[32px]  pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="Locality"
                 />
               </div>
               <div className="flex g gap-[17px] justify-between">
                 <input
                   type="text"
-                  className=" w-1/2 rounded-[4px] mb-[32px] placeholder:pl-[16px]  placeholder:text-[#757575] py-[16px] border"
-                  placeholder="State/Territory"
+                  className=" w-1/2 rounded-[4px] mb-[32px] pl-[16px]   placeholder:text-[#757575] py-[16px] border"
+                   placeholder="State/Territory"
                 />
                 <input
                   type="text"
-                  className=" w-1/2 rounded-[4px] mb-[32px] placeholder:text-black placeholder:pl-[16px]  py-[16px] border"
-                  placeholder="India"
+                  className=" w-1/2 rounded-[4px] mb-[32px]  placeholder:text-black  pl-[16px]  py-[16px] border"
+                   placeholder="India"
                 />
               </div>
               <div className="flex gap-[14px]">
                 <input
                   type="checkbox"
-                  className="w-[18px] rounded-[3px] border border-[#757575] h-[18px]"
+                  className="w-[18px]  pl-[16px] rounded-[3px] border border-[#757575] h-[18px]"
                 />
                 <p>Save this address to my profile</p>
               </div>
               <div className="flex pt-[32px] gap-[14px]">
                 <input
-                  className="w-[18px] rounded-[3px] border border-[#757575] h-[18px]"
+                  className="w-[18px]  pl-[16px] rounded-[3px] border border-[#757575] h-[18px]"
                   type="checkbox"
                 />
                 <p>Save this address to my profile</p>
@@ -131,8 +145,8 @@ const page = () => {
               <div className="mb-[32px]">
                 <input
                   type="text"
-                  className=" w-full rounded-[4px]  placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="Email"
+                  className=" w-full rounded-[4px]   pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="Email"
                 />
                 <p className="text-[11px] pl-[16px] text-[#757575]">
                   A confirmation email will be sent after checkout.
@@ -141,8 +155,8 @@ const page = () => {
               <div className="">
                 <input
                   type="text"
-                  className=" w-full rounded-[4px]  placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="Phone Number"
+                  className=" w-full rounded-[4px]   pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="Phone Number"
                 />
                 <p className="text-[11px] pl-[16px] text-[#757575]">
                   A carrier might contact you to confirm delivery.
@@ -154,8 +168,8 @@ const page = () => {
               <div className="">
                 <input
                   type="text"
-                  className=" w-full rounded-[4px]  placeholder:pl-[16px] placeholder:text-black py-[16px] border"
-                  placeholder="PAN"
+                  className=" w-full rounded-[4px]   placeholder:pl-[16px]  placeholder:text-black py-[16px] border"
+                   placeholder="PAN"
                 />
                 <p className="text-[11px] pl-[16px] text-[#757575]">
                   Enter your PAN to enable payment with UPI, Net Banking or
@@ -163,26 +177,38 @@ const page = () => {
                   card methods
                 </p>
                 <div className="flex items-center gap-[15.5px] pt-[8px]">
-                  <input type="checkbox" />
-                  <p className="text-[11px] text-[#757575]">
-                    Save PAN details to Nike Profile
-                  </p>
-                </div>
-                <div className="flex items-center gap-[15.5px] pt-[67px]">
-                  <input type="checkbox" />
-                  <p className="text-[11px] text-[#757575]">
-                    I have read and consent to eShopWorld processing my
-                    information in accordance with the{" "}
-                    <span className="underline">Privacy Statement</span> and{" "}
-                    <span className="underline">Cookie Policy</span>. eShopWorld
-                    is a trusted Nike partner.
-                  </p>
-                </div>
-                <div className="  pt-[71px]">
-                  <button className="bg-[#F5F5F5] text-[#757575] font-medium w-full py-[16px] rounded-[30px]">
-                    Continue
-                  </button>
-                </div>
+        <input
+          type="checkbox"
+          
+        />
+        <p className="text-[11px] text-[#757575]">
+          Save PAN details to Nike Profile
+        </p>
+      </div>
+      <div className="flex items-center gap-[15.5px] pt-[67px]">
+        <input
+          type="checkbox"
+          checked={checkbox2}
+          onChange={() => setCheckbox2(!checkbox2)}
+        />
+        <p className="text-[11px] text-[#757575]">
+          I have read and consent to eShopWorld processing my information in
+          accordance with the{" "}
+          <span className="underline">Privacy Statement</span> and{" "}
+          <span className="underline">Cookie Policy</span>. eShopWorld is a
+          trusted Nike partner.
+        </p>
+      </div>
+      <div className="pt-[71px]">
+        <button
+          className={`w-full py-[16px] rounded-[30px] font-medium ${
+            isButtonDisabled ? "bg-[#F5F5F5] text-[#757575]" : "bg-black text-white"
+          }`}
+          disabled={isButtonDisabled}
+        >
+          Continue
+        </button>
+      </div>
                 <hr className="w-full mt-[28px] " />
                 <div className="mt-[21px]">
                   <h1 className="text-[20px] mb-[40px] font-medium">
@@ -211,20 +237,30 @@ const page = () => {
             </div>
           </div>
 
+
+
+            
+
           <div className="w-[320px]  ">
             <h1 className="text-[21px] font-medium">Order Summary</h1>
+            
             <div className="flex mt-[21px] text-[#8D8D8D] justify-between">
               <p>Subtotal</p>
-              <p>₹ 20 890.00</p>
+              <p>₹ {subtotal.toFixed(2)}</p>
             </div>
+
+            {/* Shipping */}
             <div className="flex mt-[21px] text-[#8D8D8D] justify-between">
               <p>Delivery/Shipping</p>
-              <p>Free</p>
+              <p>{shippingFee === 0 ? "Free" : `₹ ${shippingFee.toFixed(2)}`}</p>
             </div>
+
             <hr className="mt-[21px]" />
+
+            {/* Total */}
             <div className="flex mt-[21px] font-medium justify-between">
               <p>Total</p>
-              <p>₹ 20 890.00</p>
+              <p>₹ {total.toFixed(2)}</p>
             </div>
             <hr className="mt-[21px]" />
             <p className="text-[9px] mt-[18px] mb-[26px]">
@@ -234,34 +270,34 @@ const page = () => {
             <div className="">
               <h1 className="font-bold">Arrives Mon, 27 Mar - Wed, 12 Apr</h1>
 
-              <div className="mt-[8px] gap-[12px] flex">
-                <Image src={man1} className="w-[208px]" alt=""></Image>
+
+                {
+                  cart.map((item)=>(
+                  
+                    
+              <div key={item.id} className="mt-[8px] gap-[12px] flex">
+                <Image src={item.image} width={208} height={208}  alt=""></Image>
                 <p>
-                  Nike Dri-FIT ADV TechKnit Ultra Men&apos;s Short-Sleeve
-                  Running Top <br />
-                  <span className="text-[#8D8D8D]">Qty1</span>
+                 {item.productName} <br />
+                  <span className="text-[#8D8D8D]">Qty {item.quantity}</span>
                   <br />
                   <span className="text-[#8D8D8D]">Size L</span>
                   <br />
-                  <span className="text-[#8D8D8D]">₹ 3 895.00</span>
+                  <span className="text-[#8D8D8D]">₹ {item.price}</span>
                 </p>
               </div>
-              <div className="mt-[8px] gap-[12px] flex">
-                <Image src={shoe1} className="w-[208px]" alt=""></Image>
-                <p>
-                  Nike Air Max 97 SE Men&apos;s Shoes <br />
-                  <span className="text-[#8D8D8D]">Qty1</span>
-                  <br />
-                  <span className="text-[#8D8D8D]">Size UK 8</span>
-                  <br />
-                  <span className="text-[#8D8D8D]">₹ 16 995.00</span>
-                </p>
-              </div>
-            </div>
+                  
+                  ))
+                }
+
+
+
+              
+         </div>
           </div>
         </div>
       </div>
-
+           
       <div className="bg-black ite flex mt-auto absolute  flex-col px-[20px] justify-between  text-white w-full ">
         <div className="pt-[18px] pb-[18px] flex lg:flex-row flex-col  justify-between items-center gap-2">
           <div className="flex gap-2 flex-wrap items-center">
@@ -286,4 +322,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

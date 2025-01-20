@@ -4,11 +4,37 @@ import Nike from '../../../public/nike.png';
 import Nike2 from '../../../public/nike 2.png';
 import arrow1 from '../../../public/arrow1.png';
 import arrow2 from '../../../public/arrow2.png';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 const Products = () => {
-  const scrollContainer = useRef<HTMLDivElement>(null);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(`/api/products`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        const data = await res.json();
+        setProducts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  const scrollContainer = useRef(null);
 
   const scrollLeft = () => {
     if (scrollContainer.current) {
@@ -41,27 +67,28 @@ const Products = () => {
       </div>
 
       {/* Products Section */}
-      <div
-        ref={scrollContainer}
-        className="flex gap-4 px-6 lg:px-12 pt-6 overflow-x-hidden snap-x snap-mandatory scrollbar-hide"
-      >
+      <div ref={scrollContainer} className="flex gap-4 px-6 lg:px-12 pt-6 overflow-x-hidden snap-x snap-mandatory scrollbar-hide">
+        {/* Display loading or error message */}
+        {loading && <p>Loading...</p>}
+        {error && <p>Error: {error}</p>}
+
         {/* Product Item */}
-        {[Nike, Nike, Nike2, Nike2].map((imageSrc, index) => (
-          <div
-            key={index}
-            className="min-w-[200px] md:min-w-[300px] lg:min-w-[400px] snap-center flex-shrink-0"
-          >
-            <Image
-              className="w-full h-auto rounded-lg"
-              src={imageSrc}
-              alt={`Nike Product ${index + 1}`}
-            />
-            <p className="flex justify-between pt-4 text-sm md:text-base font-medium leading-6">
-              Nike Air Max Pulse <span>₹ 13,995</span>
-            </p>
-            <p className="text-sm text-gray-500">Men&apos;s Shoes</p>
-          </div>
-        ))}
+        {products && products.length > 0 ? (
+          products.map((item) => (
+            <div key={item.id} className="min-w-[200px] md:min-w-[300px] lg:min-w-[400px] snap-center flex-shrink-0">
+              <Link href={`allproducts/${item.id}`}>
+              
+              <Image width={441} height={441} className="w-full h-auto rounded-lg" src={item.imageUrl} alt={`Nike Product`} />
+              </Link>
+              <p className="flex justify-between pt-4 text-sm md:text-base font-medium leading-6">
+                {item.productName} <span>{item.price}</span>
+              </p>
+              <p className="text-sm text-gray-500">Men&apos;s Shoes</p>
+            </div>
+          ))
+        ) : (
+          <p>No products available</p>
+        )}
       </div>
     </div>
   );

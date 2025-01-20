@@ -13,7 +13,7 @@ const Navbar = () => {
         url: string;
       };
     const navLinks: NavLink[] = [
-        { name: 'New & Featured', url: '/new-featured' },
+        { name: 'New & Featured', url: '/allproducts' },
         { name: 'Men', url: '/men' },
         { name: 'Women', url: '/women' },
         { name: 'Kids', url: '/kids' },
@@ -32,7 +32,7 @@ const Navbar = () => {
             {
                 navLinks.map((item,index)=>(
                     <p className='text-[15px] font-medium' key={index}>
-                        <Link href={''}  >{item.name}</Link>
+                        <Link href={item.url}  >{item.name}</Link>
                     </p>
                 ))
             }
