@@ -30,7 +30,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products'); // Replace with your API endpoint
+        const res = await fetch('/api/products'); 
         if (!res.ok) {
           throw new Error('Failed to fetch products');
         }
@@ -63,7 +63,7 @@ const Navbar = () => {
   const handleProductClick = (id: string) => {
     setSearchQuery('');
     setIsDropdownVisible(false);
-    window.location.href = `/allproducts/${id}`; // Navigate to the product's page
+    window.location.href = `/allproducts/${id}`; 
   };
 
   return (

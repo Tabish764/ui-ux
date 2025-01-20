@@ -5,10 +5,10 @@ import silde from "../../../public/Frame (2).png";
 import up from "../../../public/up.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
-const page = ({ params }) => {
-  const { id } = useParams();
+
+const page = () => {
+  
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,15 +37,15 @@ const page = ({ params }) => {
     fetchProducts();
   }, []);
 
-  // Calculate the products to display based on the current page
+  
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Handle page change
+ 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Total pages
+  
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   return (
@@ -159,7 +159,7 @@ const page = ({ params }) => {
             ))}
           </div>
 
-          {/* Pagination controls */}
+          
           <div className="flex justify-center gap-2 mt-4">
             {currentPage > 1 && (
               <button onClick={() => paginate(currentPage - 1)} className="py-2 px-4 border rounded">
