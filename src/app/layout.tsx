@@ -1,18 +1,13 @@
-"use client"; // Mark the component as a client component
+"use client";  // Mark the component as a client component
 
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import { ToastContainer } from 'react-toastify';
 import localFont from "next/font/local";
 import "./globals.css";
 import Topbar from "./components/Topbar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { usePathname } from "next/navigation"; // Import the hook
+import { usePathname } from "next/navigation";  // Import the hook
 import { CartProvider } from "./context/CartContext";
 
 const geistSans = localFont({
@@ -26,6 +21,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,28 +35,25 @@ export default function RootLayout({
   const isCheckoutRoute = pathname === "/checkout";
 
   return (
-    <ClerkProvider>
-      <html lang="en" className="h-full">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
-        >
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {/* Only render these components if not on /checkout */}
-          {!isCheckoutRoute && <Topbar />}
-          {!isCheckoutRoute && <Navbar />}
-
-          <main className="flex-grow">
-            <CartProvider>{children}</CartProvider>
+    <html lang="en" className="h-full">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+      >
+       
+        {/* Only render these components if not on /checkout */}
+        {!isCheckoutRoute && <Topbar />}
+        {!isCheckoutRoute && <Navbar />}
+        
+        <main className="flex-grow">
+        <CartProvider>
+        <ToastContainer />
+  {children}
+</CartProvider>
+          
           </main>
-
-          {!isCheckoutRoute && <Footer />}
-        </body>
-      </html>
-    </ClerkProvider>
+        
+        {!isCheckoutRoute && <Footer />}
+      </body>
+    </html>
   );
 }

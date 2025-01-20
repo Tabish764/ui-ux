@@ -1,12 +1,14 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from "react";
 import shoe from "../../../public/Rectangle.png";
 import Image from "next/image";
 import cart from "../../../public/Buy 2.png";
 import { useParams } from "next/navigation";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; /
 
-const page = () => {
-  const { id } = useParams(); // Access the product id from the URL
+const Page = () => {
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +19,7 @@ const page = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/products/${id}`); // Adjust the endpoint to fetch the specific product by id
+        const res = await fetch(`/api/products/${id}`); 
         if (!res.ok) {
           throw new Error("Failed to fetch product data");
         }
@@ -33,6 +35,20 @@ const page = () => {
     fetchProduct();
   }, [id]);
 
+  // Handle add to cart
+  const handleAddToCart = () => {
+    // Show toast notification
+    toast.success(`${product.name} added to cart!`, {
+      position: "top-right",
+      autoClose: 3000, // 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -47,9 +63,16 @@ const page = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto pb-[362px] mt-[158px] flex flex-wrap gap-[50px] lg:gap-[130px] justify-center lg:justify-start lg:pl-[98px]">
+      {/* Toast Container */}
+      <ToastContainer />
+
       {/* Shoe Image */}
       <div className="flex justify-center w-full lg:w-auto">
-        <Image className="px-5 lg:px-0" src={product.imageUrl || shoe} alt={product.name} />
+        <Image
+          className="px-5 lg:px-0"
+          src={product.imageUrl || shoe}
+          alt={product.name}
+        />
       </div>
 
       {/* Text Content */}
@@ -65,7 +88,10 @@ const page = () => {
         </h1>
 
         {/* Add to Cart Button */}
-        <div className="bg-black rounded-[30px] text-white mt-[26px] flex items-center justify-center gap-[10px] py-[7.5px] px-[22.5px] w-[174.42px] mx-auto lg:mx-0">
+        <div
+          onClick={handleAddToCart} // Add click handler
+          className="bg-black rounded-[30px] text-white mt-[26px] flex items-center justify-center gap-[10px] py-[7.5px] px-[22.5px] w-[174.42px] mx-auto lg:mx-0 cursor-pointer"
+        >
           <Image src={cart} alt="Cart Icon" />
           <button className="text-[15px]">Add To Cart</button>
         </div>
@@ -74,4 +100,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

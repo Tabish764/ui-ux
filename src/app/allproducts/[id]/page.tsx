@@ -9,13 +9,12 @@ import { useCart } from "../../context/CartContext";
 const page = () => {
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
+  const [relatedProducts, setRelatedProducts] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  
   const { addToCart } = useCart(); 
 
-  
   useEffect(() => {
     const fetchProduct = async () => {
       setLoading(true);
@@ -26,7 +25,18 @@ const page = () => {
           throw new Error("Failed to fetch product data");
         }
         const data = await res.json();
-        setProduct(data);
+        setProduct(data); 
+
+      
+        const relatedRes = await fetch(`/api/products`); 
+        if (!relatedRes.ok) {
+          throw new Error("Failed to fetch related products");
+        }
+        const relatedData = await relatedRes.json();
+        
+       
+        const filteredRelated = relatedData.filter(item => item.category === data.category && item.id !== data.id);
+        setRelatedProducts(filteredRelated); 
       } catch (error) {
         setError(error.message);
       } finally {
@@ -40,9 +50,7 @@ const page = () => {
   if (loading) {
     return   <div className="flex min-h-screen justify-center items-center space-x-2">
         <div className="w-[10rem] h-[10rem] border-t-[0.5rem] border-t-black-500 border-gray-200 rounded-full animate-spin"></div>
-        
-      </div>
-    ;
+      </div>;
   }
 
   if (error) {
@@ -53,12 +61,13 @@ const page = () => {
     return <p>Product not found</p>;
   }
 
-  
   const handleAddToCart = () => {
     addToCart(product); 
   };
 
   return (
+    <>
+   
     <div className="max-w-[1440px] mx-auto pb-[362px] mt-[158px] flex flex-wrap gap-[50px] lg:gap-[130px] justify-center lg:justify-start lg:pl-[98px]">
       {/* Shoe Image */}
       <div className="flex justify-center w-full lg:w-auto">
@@ -86,6 +95,27 @@ const page = () => {
         </div>
       </div>
     </div>
+
+   
+    <div className="max-w-[1440px] flex flex-col items-center justify-center mx-auto mt-[80px]">
+      <h2 className="text-[24px] font-medium">Related Products</h2>
+      <div className="flex gap-[20px] pb-5 items-center justify-center flex-wrap mt-[30px]">
+        {relatedProducts.map((item, index) => (
+          <div key={index} className="max-w-[280px] ">
+            <Image
+              src={item.imageUrl}
+              width={280}
+              height={280}
+              alt={item.productName}
+            />
+            <h3 className="text-[15px] font-medium mt-[10px]">{item.productName}</h3>
+            <p className="text-[14px] text-[#757575]">{item.description}</p>
+            <h4 className="text-[20px] font-medium mt-[10px]">₹ {item.price}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+    </>
   );
 };
 

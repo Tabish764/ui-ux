@@ -12,6 +12,10 @@ const page = ({ params }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9; 
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -32,6 +36,17 @@ const page = ({ params }) => {
     };
     fetchProducts();
   }, []);
+
+  // Calculate the products to display based on the current page
+  const indexOfLastProduct = currentPage * itemsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // Handle page change
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Total pages
+  const totalPages = Math.ceil(products.length / itemsPerPage);
 
   return (
     <div className="mx-auto max-w-[1440px] w-full pt-[76px]">
@@ -126,9 +141,9 @@ const page = ({ params }) => {
           </div>
         </div>
 
-        <div className="flex flex-col flex-wrap pb-[142px] justify-center i gap-[12px] w-[75%]">
+        <div className="flex flex-col flex-wrap pb-[142px] justify-center gap-[12px] w-[75%]">
           <div className="flex flex-wrap justify-center gap-[12px]">
-            {products.map((item, index) => (
+            {currentProducts.map((item, index) => (
               <div key={index} className="pb-[40px]">
                 <Link href={`allproducts/${item.id}`}>
                   <Image src={item.imageUrl} width={348} height={348} alt="" />
@@ -143,37 +158,28 @@ const page = ({ params }) => {
               </div>
             ))}
           </div>
-          <div className="mt-[204px]">
-            <h1 className="text-[19px] font-medium">Related Categories</h1>
-            <div className="pt-[24px] flex gap-[8px] flex-wrap">
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                Best Selling Products
+
+          {/* Pagination controls */}
+          <div className="flex justify-center gap-2 mt-4">
+            {currentPage > 1 && (
+              <button onClick={() => paginate(currentPage - 1)} className="py-2 px-4 border rounded">
+                Previous
               </button>
-              <button className="py-[8px] px-[21px] border rounded-[20px] text-center flex items-center justify-center">
-                Best Shoes
+            )}
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => paginate(index + 1)}
+                className={`py-2 px-4 border rounded ${currentPage === index + 1 ? "bg-black text-white" : ""}`}
+              >
+                {index + 1}
               </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                New Basketball Shoes
+            ))}
+            {currentPage < totalPages && (
+              <button onClick={() => paginate(currentPage + 1)} className="py-2 px-4 border rounded">
+                Next
               </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                New Football Shoes
-              </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                New Men&apos;s Shoes
-              </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                Best Men&apos;s Shoes
-              </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                New Jordan Shoes
-              </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                Best Women&apos;s Shoes
-              </button>
-              <button className="py-[8px] px-[23px] border rounded-[20px] text-center flex items-center justify-center">
-                Best Training & Gyms
-              </button>
-            </div>
+            )}
           </div>
         </div>
       </div>
