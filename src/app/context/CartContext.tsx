@@ -7,6 +7,7 @@ type CartItem = {
   productName: string;
   price: number;
   image: string;
+  imageUrl:string;
   quantity: number;
 };
 
@@ -20,7 +21,7 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC = ({ children }) => {
+export const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const fetchCart = async () => {
