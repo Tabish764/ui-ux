@@ -7,10 +7,15 @@ import Heart from '../../../public/heart.png';
 import Cart from '../../../public/cart.png';
 import { FaBars } from 'react-icons/fa';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   type NavLink = {
     name: string;
     url: string;
+  };
+
+  type Product = {
+    id: string;
+    productName: string;
   };
 
   const navLinks: NavLink[] = [
@@ -22,22 +27,22 @@ const Navbar = () => {
     { name: 'SNKRS', url: '/snkrs' },
   ];
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products'); 
+        const res = await fetch('/api/products');
         if (!res.ok) {
           throw new Error('Failed to fetch products');
         }
-        const data = await res.json();
+        const data: Product[] = await res.json();
         setProducts(data);
       } catch (error) {
-        console.error(error.message);
+        console.log((error as Error).message);
       }
     };
 
@@ -63,7 +68,7 @@ const Navbar = () => {
   const handleProductClick = (id: string) => {
     setSearchQuery('');
     setIsDropdownVisible(false);
-    window.location.href = `/allproducts/${id}`; 
+    window.location.href = `/allproducts/${id}`;
   };
 
   return (
