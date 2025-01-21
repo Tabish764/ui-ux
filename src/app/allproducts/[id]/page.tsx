@@ -1,12 +1,12 @@
 'use client';
 import React, { useEffect, useState } from "react";
-import shoe from "../../../../public/Rectangle.png";
+
 import Image from "next/image";
 import cart from "../../../../public/Buy 2.png";
 import { useParams } from "next/navigation";
 import { useCart } from "../../context/CartContext"; 
 
-const page = () => {
+const Page = () => {
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]); 
@@ -119,4 +119,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

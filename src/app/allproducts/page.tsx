@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-const page = () => {
+const Page = () => {
   
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -187,4 +187,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

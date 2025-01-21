@@ -1,7 +1,6 @@
 'use client'
 
-import Nike from '../../../public/nike.png';
-import Nike2 from '../../../public/nike 2.png';
+
 import arrow1 from '../../../public/arrow1.png';
 import arrow2 from '../../../public/arrow2.png';
 import React, { useEffect, useRef, useState } from 'react';
