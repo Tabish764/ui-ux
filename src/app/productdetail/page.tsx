@@ -5,7 +5,7 @@ import Image from "next/image";
 import cart from "../../../public/Buy 2.png";
 import { useParams } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'; /
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const Page = () => {
   const { id } = useParams(); 
