@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/allproducts/[id]/page.tsx", "src/app/allproducts/page.tsx", "src/app/checkout/page.tsx", "src/app/components/Products.jsx", "src/app/productdetail/page.jsx", "src/app/cart/page.tsx", "src/app/components/Navbar.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/allproducts/[id]/page.tsx", "src/app/allproducts/page.jsx", "src/app/checkout/page.jsx", "src/app/components/Products.jsx", "src/app/productdetail/page.jsx", "src/app/cart/page.jsx", "src/app/components/Navbar.tsx"],
   "exclude": ["node_modules"]
 }
