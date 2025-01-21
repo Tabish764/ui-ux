@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Logo from '../../../public/Frame1.png'
 
-const page = () => {
+const Page = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
         <div className='flex items-center justify-centers'>
@@ -43,4 +43,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

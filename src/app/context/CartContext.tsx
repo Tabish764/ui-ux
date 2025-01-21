@@ -29,7 +29,7 @@ export const CartProvider: React.FC = ({ children }) => {
       const data = await res.json();
       setCart(data);
     } catch (error) {
-      console.error("Error fetching cart:", error);
+      console.log("Error fetching cart:", error);
     }
   };
 
