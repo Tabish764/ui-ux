@@ -1,4 +1,6 @@
+'use client'
 // context/CartContext.tsx
+
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 // Define Cart Item type

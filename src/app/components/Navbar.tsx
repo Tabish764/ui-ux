@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Logo from '../../../public/Frame1.png';
@@ -5,7 +6,7 @@ import Link from 'next/link';
 import Search from '../../../public/Auto Layout Horizontal.png';
 import Heart from '../../../public/heart.png';
 import Cart from '../../../public/cart.png';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   type NavLink = {
@@ -31,6 +32,7 @@ const Navbar: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -71,23 +73,44 @@ const Navbar: React.FC = () => {
     window.location.href = `/allproducts/${id}`;
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
   return (
-    <div className="mx-auto max-w-[1440px] w-full flex justify-between items-center">
+    <div className="mx-auto max-w-[1440px] w-full flex justify-between items-center px-4 py-2">
       <Link href={'/'}>
-        <Image
-          width={58.85}
-          height={20.54}
-          className=""
-          src={Logo}
-          alt="Nike's Logo"
-        />
+        <Image width={58.85} height={20.54} src={Logo} alt="Nike's Logo" />
       </Link>
-      <div className="md:flex hidden gap-[15px]">
+      {/* Desktop Navigation */}
+      <div className={`md:flex hidden gap-[15px]`}>
         {navLinks.map((item, index) => (
           <p className="text-[15px] font-medium" key={index}>
             <Link href={item.url}>{item.name}</Link>
           </p>
         ))}
+      </div>
+      {/* Mobile Navigation */}
+      <div
+        className={`fixed top-0 left-0 w-full h-full bg-white z-20 transition-transform transform ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:hidden`}
+      >
+        <button
+          className="absolute top-4 right-4 text-2xl"
+          onClick={toggleMobileMenu}
+        >
+          <FaTimes />
+        </button>
+        <div className="flex flex-col items-center justify-center h-full gap-4">
+          {navLinks.map((item, index) => (
+            <p className="text-[18px] font-medium" key={index}>
+              <Link href={item.url} onClick={toggleMobileMenu}>
+                {item.name}
+              </Link>
+            </p>
+          ))}
+        </div>
       </div>
       <div className="flex items-center">
         <div className="flex items-center border rounded-full bg-[#F5F5F5] relative w-full max-w-[180px]">
@@ -101,7 +124,6 @@ const Navbar: React.FC = () => {
           <div className="absolute left-2">
             <Image src={Search} alt="Search Icon" />
           </div>
-          {/* Dropdown for search results */}
           {isDropdownVisible && (
             <div className="absolute top-[100%] left-0 w-full bg-white border shadow-lg rounded-lg z-10 max-h-[200px] overflow-y-auto">
               {filteredProducts.length > 0 ? (
@@ -125,7 +147,10 @@ const Navbar: React.FC = () => {
           <Link href={'/cart'}>
             <Image src={Cart} alt="" />
           </Link>
-          <FaBars className="block md:hidden" size={25} />
+          <FaBars
+            className="block md:hidden text-2xl cursor-pointer"
+            onClick={toggleMobileMenu}
+          />
         </div>
       </div>
     </div>

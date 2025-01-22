@@ -5,6 +5,7 @@ import Image from "next/image";
 import cart from "../../../../public/Buy 2.png";
 import { useParams } from "next/navigation";
 import { useCart } from "../../context/CartContext";
+import Link from "next/link";
 
 // Define types
 interface Product {
@@ -83,7 +84,7 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <div className="max-w-[1440px] mx-auto pb-[362px] mt-[158px] flex flex-wrap gap-[50px] lg:gap-[130px] justify-center lg:justify-start lg:pl-[98px]">
+      <div className="max-w-[1440px] mx-auto pb-[100px] mt-[158px] flex flex-wrap gap-[50px] lg:gap-[130px] justify-center lg:justify-start lg:pl-[98px]">
         {/* Product Image */}
         <div className="flex justify-center w-full lg:w-auto">
           <Image
@@ -123,12 +124,15 @@ const Page: React.FC = () => {
         <div className="flex gap-[20px] pb-5 items-center justify-center flex-wrap mt-[30px]">
           {relatedProducts.map((item) => (
             <div key={item.id} className="max-w-[280px]">
+              <Link href={`/allproducts/${item.id}`}>
+              
               <Image
                 src={item.imageUrl}
                 width={280}
                 height={280}
                 alt={item.productName}
               />
+              </Link>
               <h3 className="text-[15px] font-medium mt-[10px]">
                 {item.productName}
               </h3>

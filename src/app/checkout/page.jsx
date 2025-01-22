@@ -71,18 +71,18 @@ const Page = () => {
             </h1>
             <div className="pt-[28px]">
               <input
-                type="text"
+                required type="text"
                 className=" w-full mb-[32px] rounded-[4px] pl-[16px]  placeholder:text-black py-[16px] border"
                 placeholder="First Name"
               />
               <input
-                type="text"
+                required type="text"
                 className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
                 placeholder="First Name"
               />
               <div className="mb-[32px] rounded-[4px]">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-full rounded-[4px]  pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="Address Line 1"
                 />
@@ -92,42 +92,42 @@ const Page = () => {
               </div>
 
               <input
-                type="text"
+                required type="text"
                 className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
                 placeholder="Address Line 2"
               />
               <input
-                type="text"
+                required type="text"
                 className=" w-full rounded-[4px] mb-[32px] pl-[16px]  placeholder:text-black py-[16px] border"
                 placeholder="Address Line 3"
               />
               <div className="flex gap-[17px]  justify-between">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-1/2 rounded-[4px] mb-[32px]  placeholder:pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="Postal Code"
                 />
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-1/2 rounded-[4px] mb-[32px]  pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="Locality"
                 />
               </div>
               <div className="flex g gap-[17px] justify-between">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-1/2 rounded-[4px] mb-[32px] pl-[16px]   placeholder:text-[#757575] py-[16px] border"
                   placeholder="State/Territory"
                 />
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-1/2 rounded-[4px] mb-[32px]  placeholder:text-black  pl-[16px]  py-[16px] border"
                   placeholder="India"
                 />
               </div>
               <div className="flex gap-[14px]">
                 <input
-                  type="checkbox"
+                  required type="checkbox"
                   className="w-[18px]  pl-[16px] rounded-[3px] border border-[#757575] h-[18px]"
                 />
                 <p>Save this address to my profile</p>
@@ -135,7 +135,7 @@ const Page = () => {
               <div className="flex pt-[32px] gap-[14px]">
                 <input
                   className="w-[18px]  pl-[16px] rounded-[3px] border border-[#757575] h-[18px]"
-                  type="checkbox"
+                  required type="checkbox"
                 />
                 <p>Save this address to my profile</p>
               </div>
@@ -144,7 +144,7 @@ const Page = () => {
               </h1>
               <div className="mb-[32px]">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-full rounded-[4px]   pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="Email"
                 />
@@ -154,7 +154,7 @@ const Page = () => {
               </div>
               <div className="">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-full rounded-[4px]   pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="Phone Number"
                 />
@@ -167,7 +167,7 @@ const Page = () => {
               </h1>
               <div className="">
                 <input
-                  type="text"
+                  required type="text"
                   className=" w-full rounded-[4px]   placeholder:pl-[16px]  placeholder:text-black py-[16px] border"
                   placeholder="PAN"
                 />
@@ -177,14 +177,14 @@ const Page = () => {
                   card methods
                 </p>
                 <div className="flex items-center gap-[15.5px] pt-[8px]">
-                  <input type="checkbox" />
+                  <input required type="checkbox" />
                   <p className="text-[11px] text-[#757575]">
                     Save PAN details to Nike Profile
                   </p>
                 </div>
                 <div className="flex items-center gap-[15.5px] pt-[67px]">
                   <input
-                    type="checkbox"
+                    required type="checkbox"
                     checked={checkbox2}
                     onChange={() => setCheckbox2(!checkbox2)}
                   />
@@ -290,7 +290,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="bg-black ite flex mt-auto absolute  flex-col px-[20px] justify-between  text-white w-full ">
+      <div className="bg-black pt-5 ite flex mt-auto absolute  flex-col px-[20px] justify-between  text-white w-full ">
         <div className="pt-[18px] pb-[18px] flex lg:flex-row flex-col  justify-between items-center gap-2">
           <div className="flex gap-2 flex-wrap items-center">
             <Image src={location} alt=""></Image>
