@@ -3,7 +3,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
             <Topbar/>
                     <Navbar/>
             {children}
+            <ToastContainer />
        <Footer />
             </CartProvider>
         </main>

@@ -6,6 +6,7 @@ import cart from "../../../../public/Buy 2.png";
 import { useParams } from "next/navigation";
 import { useCart } from "../../context/CartContext";
 import Link from "next/link";
+import { toast } from "react-toastify"; // Import toast
 
 // Define types
 interface Product {
@@ -14,7 +15,7 @@ interface Product {
   description: string;
   price: number;
   imageUrl: string;
-  image:string;
+  image: string;
   category: string;
 }
 
@@ -79,7 +80,13 @@ const Page: React.FC = () => {
   }
 
   const handleAddToCart = () => {
-    addToCart(product as any); // Ensure addToCart accepts a Product type
+    addToCart(product as any); 
+    
+ 
+    toast.success(`${product.productName} has been added to your cart!`, {
+      position: "top-right",
+      autoClose: 1000, 
+    });
   };
 
   return (
@@ -125,13 +132,12 @@ const Page: React.FC = () => {
           {relatedProducts.map((item) => (
             <div key={item.id} className="max-w-[280px]">
               <Link href={`/allproducts/${item.id}`}>
-              
-              <Image
-                src={item.imageUrl}
-                width={280}
-                height={280}
-                alt={item.productName}
-              />
+                <Image
+                  src={item.imageUrl}
+                  width={280}
+                  height={280}
+                  alt={item.productName}
+                />
               </Link>
               <h3 className="text-[15px] font-medium mt-[10px]">
                 {item.productName}

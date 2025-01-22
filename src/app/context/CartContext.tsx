@@ -9,7 +9,7 @@ type CartItem = {
   productName: string;
   price: number;
   image: string;
-  imageUrl:string;
+  imageUrl: string;
   quantity: number;
 };
 
@@ -18,7 +18,6 @@ type CartContextType = {
   addToCart: (product: CartItem) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
-  fetchCart: () => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -26,15 +25,18 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const fetchCart = async () => {
-    try {
-      const res = await fetch("/api/cart");
-      const data = await res.json();
-      setCart(data);
-    } catch (error) {
-      console.log("Error fetching cart:", error);
+  
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
     }
-  };
+  }, []);
+
+  
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product: CartItem) => {
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -49,6 +51,7 @@ export const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
+    
   };
 
   const removeFromCart = (id: string) => {
@@ -61,13 +64,9 @@ export const CartProvider: React.FC<React.PropsWithChildren> = ({ children }) =>
     );
   };
 
-  useEffect(() => {
-    fetchCart();
-  }, []);
-
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity, fetchCart }}
+      value={{ cart, addToCart, removeFromCart, updateQuantity }}
     >
       {children}
     </CartContext.Provider>
