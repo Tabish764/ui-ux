@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         } md:hidden`}
       >
-        <button
+        <button name='close'
           className="absolute top-4 right-4 text-2xl"
           onClick={toggleMobileMenu}
         >
@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
         </div>
         <div className="flex items-center gap-3 pl-[12px]">
           <Image src={Heart} alt="" />
-          <Link href={'/cart'}>
+          <Link title='cart' href={'/cart'}>
             <Image src={Cart} alt="" />
           </Link>
           <FaBars
